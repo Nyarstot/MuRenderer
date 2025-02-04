@@ -1,16 +1,12 @@
 #include <iostream>
 
-#include "App/System/Window.hpp"
+#include "App/Core/App.hpp"
 
 
 int main(int argc, char** argv)
 {
-    app::Window mainWindow("name", 1280, 720);
-    mainWindow.Show();
-
-    while (true) {
-
-    }
+    app::App application;
+    application.Run();
 
     return 0;
 }

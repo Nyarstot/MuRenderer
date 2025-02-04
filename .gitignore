@@ -62,3 +62,5 @@ bld/
 *.lib
 
 !Premake5/premake5.exe
+!MuRenderer/include/MuRenderer/Debug
+!MuRenderer/source/MuRenderer/Debug

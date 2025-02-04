@@ -1,0 +1,27 @@
+#ifndef APP_CORE_APP_HPP
+#define APP_CORE_APP_HPP
+
+#include "App/System/Window.hpp"
+#include "MuRenderer/Renderer.hpp"
+#include <memory>
+
+
+namespace app
+{
+    class App final
+    {
+    private:
+        std::unique_ptr<Window> m_window;
+        std::unique_ptr<murenderer::Renderer> m_renderer;
+        bool m_shutdownRequired;
+
+    public:
+        App();
+        ~App();
+
+        void Run();
+
+    };
+}
+
+#endif // !APP_CORE_APP_HPP
