@@ -3,11 +3,24 @@
 
 namespace app
 {
+    LRESULT CALLBACK AppWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) {
+        switch (message)
+        {
+        case WM_KEYDOWN:
+            break;
+        case WM_DESTROY:
+            PostQuitMessage(0);
+            return 0;
+        }
+
+        return DefWindowProc(hWnd, message, wParam, lParam);
+    }
+
     void Window::CreateInitial(const LPCSTR& aName, int aWidth, int aHeight)
     {
         WNDCLASSEX wc;
         wc.style            = CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
-        wc.lpfnWndProc      = DefWindowProc;
+        wc.lpfnWndProc      = AppWndProc;
         wc.cbClsExtra       = 0;
         wc.cbWndExtra       = 0;
         wc.hInstance        = m_hinstance;
@@ -66,5 +79,17 @@ namespace app
         SetForegroundWindow(m_hwnd);
         SetFocus(m_hwnd);
         ShowCursor(true);
+    }
+
+    void Window::PickMessages()
+    {
+        MSG msg = { 0 };
+        if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
+            TranslateMessage(&msg);
+            DispatchMessage(&msg);
+
+            //if (msg.message == WM_QUIT)
+            //    break;
+        }
     }
 }

@@ -28,6 +28,13 @@ namespace murenderer
     {
         return std::make_unique<Ty>(std::forward<Args>(args)...);
     }
+
+    using mu_size_t = std::size_t;
+    using mu_uint_t = unsigned int;
+    using mu_uint8_t = std::uint8_t;
+    using mu_uint16_t = std::uint16_t;
+    using mu_uint32_t = std::uint32_t;
+    using mu_uint64_t = std::uint64_t;
 }
 
 #endif // !MURENDERER_SYSTEMTYPES_HPP

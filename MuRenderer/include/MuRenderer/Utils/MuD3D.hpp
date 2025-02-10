@@ -7,4 +7,6 @@
 #include <d3dcompiler.h>
 #include <wrl.h>
 
+#include "MuRenderer/Utils/d3dx12.hpp"
+
 #endif // !MURENDERER_UTILS_MUD3D_HPP

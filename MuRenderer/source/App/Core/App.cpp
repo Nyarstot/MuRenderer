@@ -6,7 +6,7 @@ namespace app
     App::App() : m_shutdownRequired(false)
     {
         m_window = std::make_unique<Window>("AppName", 1280, 720);
-        m_renderer = std::make_unique<murenderer::Renderer>();
+        m_renderer = std::make_unique<murenderer::MultiGPURenderer>();
     }
 
     App::~App()
@@ -18,7 +18,7 @@ namespace app
         m_window->Show();
 
         while (!m_shutdownRequired) {
-
+            m_window->PickMessages();
         }
     }
 }

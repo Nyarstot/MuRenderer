@@ -42,6 +42,31 @@ namespace murenderer
         return m_devicePrio;
     }
 
+    ID3D12Device* Device::GetDXDevice() const
+    {
+        return m_dxDevice.Get();
+    }
+
+    ID3D12CommandQueue* Device::GetCommandQueue() const
+    {
+        return m_dxCommandQueue.Get();
+    }
+
+    ID3D12DescriptorHeap* Device::GetRTVHeap() const
+    {
+        return m_dxRtvDescriptorHeap.Get();
+    }
+
+    mu_uint_t Device::GetRTVDescriptorSize() const
+    {
+        return m_rtvDescriptorSize;
+    }
+
+    void Device::SetRTVDescriptorSize(mu_uint_t aRTVDescSize)
+    {
+        m_rtvDescriptorSize = aRTVDescSize;
+    }
+
     void Device::CreateDescriptorHeap(D3D12_DESCRIPTOR_HEAP_DESC aRtvHeapDesc, D3D12_DESCRIPTOR_HEAP_DESC aCbvSrvUavHeapDsc)
     {
         // Create the RTV descriptor heap

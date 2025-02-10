@@ -2,7 +2,8 @@
 #define APP_CORE_APP_HPP
 
 #include "App/System/Window.hpp"
-#include "MuRenderer/Renderer.hpp"
+#include "MuRenderer/Core/MultiGPURenderer.hpp"
+#include "MuRenderer/Core/SingleGPURenderer.hpp"
 #include <memory>
 
 

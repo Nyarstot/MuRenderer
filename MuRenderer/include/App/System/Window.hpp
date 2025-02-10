@@ -26,6 +26,7 @@ namespace app
         ~Window();
 
         void Show();
+        void PickMessages();
 
     };
 }

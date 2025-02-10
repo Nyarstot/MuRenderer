@@ -1,7 +1,7 @@
 #ifndef MURENDERER_DEVICE_DEVICEPOOL_HPP
 #define MURENDERER_DEVICE_DEVICEPOOL_HPP
 
-#include "MuRenderer/SystemTypes.hpp"
+#include "MuRenderer/System/SystemTypes.hpp"
 #include "MuRenderer/Utils/MuD3D.hpp"
 #include "MuRenderer/Device/Device.hpp"
 
@@ -17,7 +17,7 @@ namespace murenderer
         std::vector<MS::ComPtr<ID3D12GraphicsCommandList>> m_commandLists;
         std::vector<MS::ComPtr<ID3D12PipelineState>> m_pipelineStates;
         std::vector<MS::ComPtr<ID3D12RootSignature>> m_rootSignatures;
-        //std::vector<MS::ComPtr<D3D12_VERTEX_BUFFER_VIEW>> m_vtxBufferViews;
+        std::vector<D3D12_VERTEX_BUFFER_VIEW*> m_vtxBufferViews;
         size_t m_primaryDeviceIndex;
 
     public:

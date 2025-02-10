@@ -1,12 +1,12 @@
 #ifndef MURENDERER_RENDERPROPERTIES_HPP
 #define MURENDERER_RENDERPROPERTIES_HPP
 
-#include <cstdint>
+#include "MuRenderer/System/SystemTypes.hpp"
 
 
 namespace murenderer
 {
-    enum RenderProperties : std::size_t
+    enum RenderProperties : mu_size_t
     {
         RenderProperties_NumRenderTargets = 3
     };
