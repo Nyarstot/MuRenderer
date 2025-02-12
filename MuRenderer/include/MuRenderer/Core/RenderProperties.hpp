@@ -10,6 +10,11 @@ namespace murenderer
     {
         RenderProperties_NumRenderTargets = 3
     };
+
+    enum CrossAdapterProperties : mu_size_t
+    {
+        CrossAdapterProperties_NumDevices = 2
+    };
 }
 
 #endif // !MURENDERER_RENDERPROPERTIES_HPP

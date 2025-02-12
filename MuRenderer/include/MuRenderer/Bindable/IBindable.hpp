@@ -8,6 +8,7 @@ namespace murenderer
     {
     public:
         virtual ~IBindable() = default;
+        virtual void Bind() = 0;
 
     };
 }

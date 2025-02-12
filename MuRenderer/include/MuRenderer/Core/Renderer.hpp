@@ -2,7 +2,7 @@
 #define MURENDERER_CORE_RENDERER_HPP
 
 #include "MuRenderer/Core/RenderProperties.hpp"
-#include "MuRenderer/Device/DevicePool.hpp"
+#include "MuRenderer/Device/DevicePair.hpp"
 #include "MuRenderer/Utils/MuD3D.hpp"
 
 #include "MuRenderer/System/RenderWindowInfo.hpp"
@@ -18,7 +18,7 @@ namespace murenderer
     class Renderer
     {
     private:
-        DevicePool m_devicePool;
+        SharedPtr<DevicePair> m_devicePair;
 
         D3D12_VIEWPORT m_dxViewport;
         D3D12_RECT m_dxScissorRect;
