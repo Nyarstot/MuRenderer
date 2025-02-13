@@ -10,6 +10,7 @@ namespace murenderer
     {
         mu_uint_t m_height;
         mu_uint_t m_width;
+        float m_aspectRatio;
         HWND m_hwnd;
     };
 }

@@ -35,7 +35,10 @@ namespace murenderer
             MS::ComPtr<ID3D12Resource> aTextureUploadHeap, void* aTextureData, UINT aPixelSize);
 
         void CreateSwapChain(Device* aDevice, DXGI_SWAP_CHAIN_DESC1 aSwapChainDesc);
-        void CreateTexture(Device* aDevice, D3D12_RESOURCE_DESC aTexDesc, MS::ComPtr<ID3D12Resource>* aTexture, MS::ComPtr<ID3D12Resource>* aTextureUploadHeap);
+        void CreateTexture(Device* aDevice, D3D12_RESOURCE_DESC textureDesc, MS::ComPtr<ID3D12Resource>* texture, MS::ComPtr<ID3D12Resource>* textureUploadHeap, const UINT heapIndex);
+        void CreatePipelineState(Device* aDevice, MS::ComPtr<ID3D12PipelineState>* pipelineStateObject, D3D12_GRAPHICS_PIPELINE_STATE_DESC psoDesc, std::wstring shaderPath, D3D12_INPUT_ELEMENT_DESC inputLayoutDesc[], UINT inputLayoutCount, MS::ComPtr<ID3D12RootSignature> rootSignature);
+        void CreateVertexBuffer(Device* aDevice, D3D12_VERTEX_BUFFER_VIEW* vertexBufferView, MS::ComPtr<ID3D12Resource>* vertexBuffer, Vertex* vertexData, const UINT vertexDataSize, const UINT vertexSize);
+        void CreateConstantBuffer(Device* aDevice, MS::ComPtr<ID3D12Resource>* constantBuffer, ConstantBuffer* constantBufferData, const UINT constantBufferSize, const UINT cbvHeapPosition);
 
     public:
         Renderer();

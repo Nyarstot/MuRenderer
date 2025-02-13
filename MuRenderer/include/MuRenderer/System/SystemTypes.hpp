@@ -17,6 +17,9 @@ namespace murenderer
     template<typename Ty>
     using WeakPtr = std::weak_ptr<Ty>;
 
+    template<typename Ty>
+    using ComPtr = Microsoft::WRL::ComPtr<Ty>;
+
     template<typename Ty, typename... Args>
     constexpr SharedPtr<Ty> CreateShared(Args&&... args)
     {
@@ -28,6 +31,8 @@ namespace murenderer
     {
         return std::make_unique<Ty>(std::forward<Args>(args)...);
     }
+
+    using mu_wstring_t = std::wstring;
 
     using mu_dword_t    = DWORD;
     using mu_tchar_t    = TCHAR;
