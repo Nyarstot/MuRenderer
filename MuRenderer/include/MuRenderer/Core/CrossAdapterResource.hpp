@@ -1,14 +1,8 @@
 #ifndef MURENDERER_CORE_CROSSADAPTERRESOURCE_HPP
 #define MURENDERER_CORE_CROSSADAPTERRESOURCE_HPP
 
-#include "MuRenderer/System/SystemTypes.hpp"
-#include "MuRenderer/Core/RenderProperties.hpp"
-#include "MuRenderer/Utils/MuD3D.hpp"
-
 #include "MuRenderer/Device/Device.hpp"
 #include "MuRenderer/Device/DevicePair.hpp"
-
-#include <array>
 
 
 namespace murenderer

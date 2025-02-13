@@ -1,8 +1,6 @@
 #ifndef MURENDERER_DEVICE_DEVICEPAIR_HPP
 #define MURENDERER_DEVICE_DEVICEPAIR_HPP
 
-#include "MuRenderer/System/SystemTypes.hpp"
-#include "MuRenderer/Utils/MuD3D.hpp"
 #include "MuRenderer/Device/Device.hpp"
 #include "MuRenderer/Device/IDeviceContainer.hpp"
 

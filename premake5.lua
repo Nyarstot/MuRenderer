@@ -16,6 +16,9 @@ workspace "MuRenderer"
         targetdir("build/bin/" .. buildpattern .. "/%{prj.name}")
         objdir("build/int/" .. buildpattern .. "/%{prj.name}")
 
+        pchheader "pch.hpp"
+        pchsource "%{wks.location}/%{prj.name}/source/pch.cpp"
+
         files
         {
             "%{wks.location}/%{prj.name}/include/**.hpp",
@@ -33,7 +36,10 @@ workspace "MuRenderer"
             "dxgi.lib",
             "d3dcompiler.lib",
             "dxguid.lib",
-            "dxgidebug.dll"
+            "dxgidebug.dll",
+            "Advapi32.lib",
+            "user32.lib",
+            "Gdi32.lib"
         }
 
         filter "system:windows"

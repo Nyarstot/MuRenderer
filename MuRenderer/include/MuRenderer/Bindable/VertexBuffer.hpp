@@ -2,7 +2,6 @@
 #define MURENDERER_BINDABLE_VERTEXBUFFER_HPP
 
 #include "MuRenderer/Bindable/IBindable.hpp"
-#include "MuRenderer/System/SystemTypes.hpp"
 #include "MuRenderer/Core/Vertex.hpp"
 #include "MuRenderer/Device/Device.hpp"
 

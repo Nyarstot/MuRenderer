@@ -9,7 +9,7 @@ namespace murenderer
     class MultiGPURenderer final : public Renderer
     {
     private:
-
+        mu_size_t m_currentFrameIndex;
 
     public:
         MultiGPURenderer();

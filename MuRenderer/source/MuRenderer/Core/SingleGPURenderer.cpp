@@ -1,3 +1,4 @@
+#include "pch.hpp"
 #include "MuRenderer/Core/SingleGPURenderer.hpp"
 
 

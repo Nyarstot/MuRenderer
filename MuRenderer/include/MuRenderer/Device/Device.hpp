@@ -1,11 +1,6 @@
 #ifndef MURENDERER_DEVICE_HPP
 #define MURENDERER_DEVICE_HPP
 
-#include <array>
-
-#include "MuRenderer/Core/RenderProperties.hpp"
-#include "MuRenderer/System/SystemTypes.hpp"
-#include "MuRenderer/Utils/MuD3D.hpp"
 
 namespace murenderer
 {
@@ -31,7 +26,7 @@ namespace murenderer
         MS::ComPtr<ID3D12DescriptorHeap> m_dxRtvDescriptorHeap;
         MS::ComPtr<ID3D12DescriptorHeap> m_dxCbvSrvUavHeap;
         UINT m_rtvDescriptorSize;
-        UINT m_cbvSrvUavHeapSize;
+        UINT m_cbvSrvUavDescriptorSize;
 
         DevicePriority m_devicePrio;
 
@@ -45,6 +40,9 @@ namespace murenderer
         ID3D12Device* GetDXDevice() const;
         ID3D12CommandQueue* GetCommandQueue() const;
         ID3D12DescriptorHeap* GetRTVHeap() const;
+
+        ID3D12DescriptorHeap* GetCbvSrvUavHeap() const;
+        mu_uint_t GetCbvSrvUavDescriptorSize() const;
 
         mu_uint_t GetRTVDescriptorSize() const;
         void SetRTVDescriptorSize(mu_uint_t aRTVDescSize);

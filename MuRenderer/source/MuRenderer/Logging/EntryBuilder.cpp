@@ -1,3 +1,4 @@
+#include "pch.hpp"
 #include "MuRenderer/Logging/EntryBuilder.hpp"
 #include "MuRenderer/Logging/LoggingChannel.hpp"
 

@@ -1,15 +1,11 @@
 #ifndef MURENDERER_CORE_RENDERER_HPP
 #define MURENDERER_CORE_RENDERER_HPP
 
-#include "MuRenderer/Core/RenderProperties.hpp"
 #include "MuRenderer/Device/DevicePair.hpp"
-#include "MuRenderer/Utils/MuD3D.hpp"
-
 #include "MuRenderer/System/RenderWindowInfo.hpp"
-#include "MuRenderer/System/SystemTypes.hpp"
-
 #include "MuRenderer/Bindable/ConstantBuffer.hpp"
 #include "MuRenderer/Bindable/VertexBuffer.hpp"
+
 
 using namespace Microsoft;
 
@@ -32,11 +28,14 @@ namespace murenderer
         HANDLE m_fenceEvent;
         RenderWindowInfo m_renderWindowInfo;
 
-    private:
+    protected:
         void UpdateConstantBuffer(MS::ComPtr<ID3D12Resource> aConstantBuffer, ConstantBuffer* aConstantData, const UINT& aDataSize);
         void UpdateVertexBuffer(MS::ComPtr<ID3D12Resource> aVertexBuffer, VertexBuffer* aVertexBufferData, const UINT& aDataSize);
         void UpdateTextureData(MS::ComPtr<ID3D12GraphicsCommandList> aCommandList, MS::ComPtr<ID3D12Resource> aTextureResource,
             MS::ComPtr<ID3D12Resource> aTextureUploadHeap, void* aTextureData, UINT aPixelSize);
+
+        void CreateSwapChain(Device* aDevice, DXGI_SWAP_CHAIN_DESC1 aSwapChainDesc);
+        void CreateTexture(Device* aDevice, D3D12_RESOURCE_DESC aTexDesc, MS::ComPtr<ID3D12Resource>* aTexture, MS::ComPtr<ID3D12Resource>* aTextureUploadHeap);
 
     public:
         Renderer();
@@ -46,7 +45,6 @@ namespace murenderer
         void OnDestroy();
 
         void UpdateRenderWindowInfo(const RenderWindowInfo& aRenderWindowInfo);
-        void CreateSwapChain(Device* aDevice, DXGI_SWAP_CHAIN_DESC1 aSwapChainDesc);
 
         virtual void OnInit() = 0;
         virtual void OnUpdate() = 0;

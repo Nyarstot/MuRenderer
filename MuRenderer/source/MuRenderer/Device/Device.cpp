@@ -1,3 +1,4 @@
+#include "pch.hpp"
 #include "MuRenderer/Device/Device.hpp"
 #include "MuRenderer/Debug/DXException.hpp"
 
@@ -57,6 +58,16 @@ namespace murenderer
         return m_dxRtvDescriptorHeap.Get();
     }
 
+    ID3D12DescriptorHeap* Device::GetCbvSrvUavHeap() const
+    {
+        return m_dxCbvSrvUavHeap.Get();
+    }
+
+    mu_uint_t Device::GetCbvSrvUavDescriptorSize() const
+    {
+        return m_cbvSrvUavDescriptorSize;
+    }
+
     mu_uint_t Device::GetRTVDescriptorSize() const
     {
         return m_rtvDescriptorSize;
@@ -80,6 +91,6 @@ namespace murenderer
         DXThrowIfFailed(m_dxDevice->CreateDescriptorHeap(&aCbvSrvUavHeapDsc, IID_PPV_ARGS(&m_dxCbvSrvUavHeap)));
 
         // Set CBV / SRV/ UAV descriptor size
-        m_cbvSrvUavHeapSize = m_dxDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
+        m_cbvSrvUavDescriptorSize = m_dxDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
     }
 }

@@ -1,3 +1,4 @@
+#include "pch.hpp"
 #include "App/System/Window.hpp"
 #include <stdexcept>
 

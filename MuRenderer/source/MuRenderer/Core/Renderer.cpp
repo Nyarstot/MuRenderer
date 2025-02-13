@@ -1,3 +1,4 @@
+#include "pch.hpp"
 #include "MuRenderer/Core/Renderer.hpp"
 #include "MuRenderer/Debug/DXException.hpp"
 #include "MuRenderer/Device/Device.hpp"

@@ -1,5 +1,7 @@
+#include "pch.hpp"
 #include "MuRenderer/Device/DevicePair.hpp"
 #include "MuRenderer/Debug/DXException.hpp"
+#include <iostream>
 
 
 namespace murenderer
@@ -81,6 +83,10 @@ namespace murenderer
             m_devices.first = primaryDevice;
             m_devices.second = secondaryDevice;
         }
+
+        //TODO: Make logger
+        std::wcout << "Created Primary Device: " << usedAdapterDescPrimary.Description << std::endl;
+        std::wcout << "Created Secondary Device: " << usedAdapterDescSecondary.Description << std::endl;
     }
 
     Device* DevicePair::GetPrimaryDevice() const
